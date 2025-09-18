@@ -1,0 +1,28 @@
+{
+  "version": 2,
+  "name": "youtube-sponsorship-manager",
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ],
+  "env": {
+    "VITE_APP_NAME": "YouTube Sponsorship Manager",
+    "VITE_APP_VERSION": "1.0.0"
+  },
+  "build": {
+    "env": {
+      "NODE_ENV": "production"
+    }
+  }
+}
