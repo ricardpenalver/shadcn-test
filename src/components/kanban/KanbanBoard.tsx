@@ -1,7 +1,6 @@
 import React, { useState, useMemo } from 'react'
 import { DndContext, DragEndEvent, DragStartEvent, DragOverlay, closestCenter, KeyboardSensor, PointerSensor, useSensor, useSensors } from '@dnd-kit/core'
 import { motion, AnimatePresence } from 'framer-motion'
-import { sortableKeyboardCoordinates } from '@dnd-kit/sortable'
 import { Plus, Search, Filter, Calendar, Download, Settings, LayoutGrid } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
@@ -42,9 +41,7 @@ export const KanbanBoard: React.FC = () => {
 
   const sensors = useSensors(
     useSensor(PointerSensor),
-    useSensor(KeyboardSensor, {
-      coordinateGetter: sortableKeyboardCoordinates,
-    })
+    useSensor(KeyboardSensor)
   )
 
   // Filtrar acuerdos basado en búsqueda

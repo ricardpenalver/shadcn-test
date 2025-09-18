@@ -16,9 +16,9 @@ const mockUser = {
   avatar: '',
   role: 'creator' as const,
   preferences: {
-    theme: 'light',
+    theme: 'light' as const,
     notifications: true,
-    language: 'es'
+    language: 'es' as const
   }
 }
 
