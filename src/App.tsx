@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import { KanbanBoard } from '@/components/kanban/KanbanBoard'
 import { Dashboard } from '@/components/dashboard/Dashboard'
@@ -6,10 +6,10 @@ import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { LayoutDashboard, Kanban, Settings, Bell, User, Menu, X } from 'lucide-react'
 import { useStore } from '@/store/useStore'
-import { SponsorshipAgreement, User as UserType, DashboardMetrics, AIInsight, Achievement } from '@/types'
+import { SponsorshipAgreement, DashboardMetrics, AIInsight, Achievement } from '@/types'
 
 // Datos de ejemplo para demostración
-const mockUser: UserType = {
+const mockUser = {
   id: '1',
   name: 'Juan Pérez',
   email: 'juan@example.com',

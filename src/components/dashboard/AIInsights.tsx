@@ -1,11 +1,11 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { Brain, TrendingUp, AlertTriangle, Lightbulb, CheckCircle, XCircle, Clock } from 'lucide-react'
+import { Brain, TrendingUp, AlertTriangle, Lightbulb, CheckCircle, Clock } from 'lucide-react'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Progress } from '@/components/ui/progress'
-import { Alert, AlertDescription } from '@/components/ui/alert'
+import { AlertDescription } from '@/components/ui/alert'
 import { AIInsight } from '@/types'
 
 interface AIInsightsProps {

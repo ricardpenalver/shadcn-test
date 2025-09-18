@@ -4,7 +4,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
-import { Bell, Settings, Download, Calendar, BarChart3, Zap, Target } from 'lucide-react'
+import { Bell, Settings, Download, Calendar, BarChart3, Zap, Target, CheckCircle } from 'lucide-react'
 import { DashboardMetrics } from './DashboardMetrics'
 import { AIInsights } from './AIInsights'
 import { useStore } from '@/store/useStore'
@@ -23,7 +23,8 @@ export const Dashboard: React.FC = () => {
     addNotification({
       title: 'Datos Actualizados',
       message: 'Los datos del dashboard han sido actualizados correctamente',
-      type: 'success'
+      type: 'success',
+      read: false
     })
   }
 
@@ -32,7 +33,8 @@ export const Dashboard: React.FC = () => {
     addNotification({
       title: 'Exportación Iniciada',
       message: 'Los datos se están preparando para descarga',
-      type: 'info'
+      type: 'info',
+      read: false
     })
   }
 

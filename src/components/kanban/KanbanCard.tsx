@@ -27,7 +27,6 @@ export const KanbanCard: React.FC<KanbanCardProps> = ({
   isDragging = false
 }) => {
   const priorityColor = getPriorityColor(agreement.priority)
-  const statusColor = getStatusColor(agreement.status)
 
   return (
     <motion.div

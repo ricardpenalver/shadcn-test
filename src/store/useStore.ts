@@ -66,7 +66,7 @@ interface AppState {
 
 export const useStore = create<AppState>()(
   persist(
-    (set, get) => ({
+    (set) => ({
       // User state
       user: null,
       setUser: (user) => set({ user }),

@@ -1,12 +1,11 @@
 import React, { useState, useMemo } from 'react'
 import { DndContext, DragEndEvent, DragOverEvent, DragStartEvent, DragOverlay, closestCenter, KeyboardSensor, PointerSensor, useSensor, useSensors } from '@dnd-kit/core'
-import { arrayMove, SortableContext, sortableKeyboardCoordinates, verticalListSortingStrategy } from '@dnd-kit/sortable'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Plus, Search, Filter, Calendar, Download, Settings, LayoutGrid, LayoutList } from 'lucide-react'
+import { Plus, Search, Filter, Calendar, Download, Settings, LayoutGrid } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Badge } from '@/components/ui/badge'
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
+import { Tabs, TabsContent } from '@/components/ui/tabs'
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger, DropdownMenuSeparator } from '@/components/ui/dropdown-menu'
 import { KanbanColumn } from './KanbanColumn'
 import { KanbanCard } from './KanbanCard'
@@ -30,10 +29,6 @@ export const KanbanBoard: React.FC = () => {
     agreements,
     searchQuery,
     setSearchQuery,
-    statusFilter,
-    setStatusFilter,
-    priorityFilter,
-    setPriorityFilter,
     moveAgreement,
     setIsCreateModalOpen,
     setSelectedAgreement,
@@ -51,7 +46,7 @@ export const KanbanBoard: React.FC = () => {
     })
   )
 
-  // Filtrar acuerdos basado en búsqueda y filtros
+  // Filtrar acuerdos basado en búsqueda
   const filteredAgreements = useMemo(() => {
     return agreements.filter(agreement => {
       const matchesSearch = searchQuery === '' || 
@@ -59,12 +54,9 @@ export const KanbanBoard: React.FC = () => {
         agreement.sponsor.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
         agreement.sponsor.company.toLowerCase().includes(searchQuery.toLowerCase())
 
-      const matchesStatus = statusFilter.length === 0 || statusFilter.includes(agreement.status)
-      const matchesPriority = priorityFilter.length === 0 || priorityFilter.includes(agreement.priority)
-
-      return matchesSearch && matchesStatus && matchesPriority
+      return matchesSearch
     })
-  }, [agreements, searchQuery, statusFilter, priorityFilter])
+  }, [agreements, searchQuery])
 
   // Organizar acuerdos por columnas
   const columns = useMemo(() => {
@@ -78,7 +70,7 @@ export const KanbanBoard: React.FC = () => {
     setActiveId(event.active.id as string)
   }
 
-  const handleDragOver = (event: DragOverEvent) => {
+  const handleDragOver = () => {
     // Lógica para manejar drag over si es necesario
   }
 
@@ -98,7 +90,7 @@ export const KanbanBoard: React.FC = () => {
     }
   }
 
-  const handleAddAgreement = (status: string) => {
+  const handleAddAgreement = () => {
     setIsCreateModalOpen(true)
   }
 
@@ -122,9 +114,9 @@ export const KanbanBoard: React.FC = () => {
     console.log('Move agreement:', id)
   }
 
-  const handleFilter = (columnId: string) => {
+  const handleFilter = () => {
     // Implementar filtros específicos por columna
-    console.log('Filter column:', columnId)
+    console.log('Filter column')
   }
 
   const activeAgreement = activeId ? agreements.find(a => a.id === activeId) : null
