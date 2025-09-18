@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/button'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu'
 import { SponsorshipAgreement } from '@/types'
-import { formatCurrency, formatDate, getPriorityColor, getStatusColor } from '@/lib/utils'
+import { formatCurrency, formatDate, getPriorityColor } from '@/lib/utils'
 
 interface KanbanCardProps {
   agreement: SponsorshipAgreement

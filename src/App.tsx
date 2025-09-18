@@ -4,7 +4,7 @@ import { KanbanBoard } from '@/components/kanban/KanbanBoard'
 import { Dashboard } from '@/components/dashboard/Dashboard'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
-import { LayoutDashboard, Kanban, Settings, Bell, User, Menu, X } from 'lucide-react'
+import { LayoutDashboard, Kanban, Settings, Bell, Menu, X } from 'lucide-react'
 import { useStore } from '@/store/useStore'
 import { SponsorshipAgreement, DashboardMetrics, AIInsight, Achievement } from '@/types'
 
@@ -14,7 +14,7 @@ const mockUser = {
   name: 'Juan Pérez',
   email: 'juan@example.com',
   avatar: '',
-  role: 'creator',
+  role: 'creator' as const,
   preferences: {
     theme: 'light',
     notifications: true,

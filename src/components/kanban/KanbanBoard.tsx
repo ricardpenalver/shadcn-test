@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from 'react'
-import { DndContext, DragEndEvent, DragOverEvent, DragStartEvent, DragOverlay, closestCenter, KeyboardSensor, PointerSensor, useSensor, useSensors } from '@dnd-kit/core'
+import { DndContext, DragEndEvent, DragStartEvent, DragOverlay, closestCenter, KeyboardSensor, PointerSensor, useSensor, useSensors } from '@dnd-kit/core'
 import { motion, AnimatePresence } from 'framer-motion'
+import { sortableKeyboardCoordinates } from '@dnd-kit/sortable'
 import { Plus, Search, Filter, Calendar, Download, Settings, LayoutGrid } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
