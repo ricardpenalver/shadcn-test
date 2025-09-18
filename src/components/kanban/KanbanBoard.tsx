@@ -1,6 +1,5 @@
 import React, { useState, useMemo } from 'react'
 import { DndContext, DragEndEvent, DragStartEvent, DragOverlay, closestCenter, KeyboardSensor, PointerSensor, useSensor, useSensors } from '@dnd-kit/core'
-import { motion, AnimatePresence } from 'framer-motion'
 import { Plus, Search, Filter, Calendar, Download, Settings, LayoutGrid } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
